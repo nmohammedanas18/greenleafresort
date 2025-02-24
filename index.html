@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resort</title>
     <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Norican&display=swap">
+  
+
     
 </head>
 <body>
     <header>
-        <img src="images/logo.png" width="200" height="145" class="top-left">
-       
-        <div class="charm-regular">
-            <div class="charm-bold">
-        <h1>Green Leaf Resort</h1>
-        <img src="images/karnataka.png" width="250" height="145" class="top-right">
 
-       </head>
-<body>
+       
+        <img src="images/logo.png" width="200" height="145" class="logo" >
+       
+        <h1><i>Green Leaf Resort</i></h1>
+        <img src="images/karnataka.png" width="250" height="250" class="state-logo" >
+
+
 
     
 
@@ -40,6 +45,37 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
+    
+
+  <div id="imgModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <script>
+   
+    const modal = document.getElementById("imgModal");
+
+    const img = document.getElementById("popupImg");
+    const modalImg = document.getElementById("modalImg");
+
+    img.onclick = function() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    }
+
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    closeBtn.onclick = function() { 
+      modal.style.display = "none";
+    }
+
+    modal.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 
 
 
@@ -48,21 +84,71 @@
 </div>
     </header>
 
+</head>
+<body>
+  <nav id="navbar">
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#ff">Featured Facilities</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="#review">Review</a>
+    <a href="#form">Query</a>
+  </nav>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-        <a href="#review">Review</a>
-    </nav>
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('active');
+    }
+  </script>
+
+
     <div class="main-content">
 
-        <img src="images/gf.jpg" class="slider-img" alt="Slide 2" />
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/slider1.png" alt="Slide 1"></div>
+                <div class="swiper-slide"><img src="images/slider2.png"  alt="Slide 2"></div>
+                <div class="swiper-slide"><img src="images/slider3.jpg"   alt="Slide 3"></div>
+                <div class="swiper-slide"><img src="images/slider4.jpg"   alt="Slide 4"></div>
+            </div>
+            
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                loop: true,  
+                autoplay: {
+                    delay: 3000,  
+                    disableOnInteraction: false  
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                }
+            });
+        </script>
+    
 
       <div class="wt">
             <a href="https://api.whatsapp.com/send?phone=+919019728811&text=Hello%20Green%20Leaf%20Farm%20House">
-                <img src="images/wt.png" class="bti" alt="chat with us">
+                <img src="images/wt.png" class="bti" alt="chat with us" >
           </a>
             
         </div>
@@ -77,7 +163,10 @@
                     The video showcases the tranquil beauty of our resort, highlighting its serene surroundings and inviting atmosphere. As the camera pans across lush gardens and cozy accommodations, viewers are immersed in the peaceful ambiance of the resort. The video captures guests enjoying a variety of activities, from relaxing by the pool to exploring the scenic landscapes. With stunning visuals and a calming soundtrack, it perfectly reflects the resort’s perfect blend of nature, comfort, and relaxation, offering a glimpse of the unforgettable experiences that await every guest.
                    </p>
                 </div>
-        <div class="ff-head">
+
+
+
+        <div id="ff" class="ff-head">
             <h2>Featured Facilities</h2>
             <p>Everything You Need Right at Home Stay</p>
         </div>
@@ -87,13 +176,13 @@
         
             <div class="facility">
                 <div class="facility-item">
-                    <img src="images/sec.png" width="200" height="200" alt="24/7 Security">
+                    <img src="images/sec.png"  width="200" height="200" alt="24/7 Security">
                     <h3>24/7 Security</h3>
                     <p>We take safety seriously through our dedicated team that stands watch.</p>
                 </div>
         
                 <div class="facility-item">
-                    <img src="images/wifi.png" width="200" height="200" alt="Free Wifi">
+                    <img src="images/wifi.png"  width="200" height="200" alt="Free Wifi">
                     <h3>Free Wifi</h3>
                     <p>All rooms have good high-speed Wi-Fi connectivity.</p>
                 </div>
@@ -101,13 +190,13 @@
         
             <div class="facility">
                 <div class="facility-item">
-                    <img src="images/pool.png" width="200" height="200" alt="Swimming Pool">
+                    <img src="images/pool.png"  width="200" height="200" alt="Swimming Pool">
                     <h3>Swimming Pool</h3>
                     <p>Swimming is a low-impact activity that has many physical and mental health benefits.</p>
                 </div>
         
                 <div class="facility-item">
-                    <img src="images/bbq.png" width="200" height="200" alt="BBQ">
+                    <img src="images/bbq.png"  width="200" height="200" alt="BBQ">
                     <h3>BBQ</h3>
                     <p>Grilling meat helps it retain more nutrients compared to baking or frying.</p>
                 </div>
@@ -115,13 +204,13 @@
         
             <div class="facility">
                 <div class="facility-item">
-                    <img src="images/idgames.png" width="200" height="200" alt="Indoor Game">
+                    <img src="images/idgames.png"  width="200" height="200" alt="Indoor Game">
                     <h3>Indoor Game</h3>
                     <p>Indoor games were also played in teams which enhances the feeling of team leadership.</p>
                 </div>
         
                 <div class="facility-item">
-                    <img src="images/odgames.png" width="200" height="200" alt="Outdoor Game">
+                    <img src="images/odgames.png"  width="200" height="200" alt="Outdoor Game">
                     <h3>Outdoor Game</h3>
                     <p>Playing outdoors allows children to develop self-confidence, independence, and self-esteem.</p>
                 </div>
@@ -143,7 +232,7 @@
     <div class="content-wrapper">
        
         <div class="image-container">
-            <img src="images/rs17.jpg" width="300" height="400">
+            <img src="images/rs17.jpg"   width="300" height="400">
         </div>
 
         
@@ -192,36 +281,36 @@ Enveloped by the harmonious chorus of birdsong, the air at GREEN LEAF is laced w
                 
                 
             <div class="gallery">
-                <img src="images/slider1.png" width="300" height="300" alt="Beach view">
-                <img src="images/slider2.png" width="300" height="300" alt="Resort pool">
-                <img src="images/slider3.jpg" width="300" height="300" alt="Resort pool">
-                <img src="images/slider4.jpg" width="300" height="300" alt="Resort pool">
+                <img src="images/slider1.png"  width="300" height="300" alt="Beach view">
+                <img src="images/slider2.png"  width="300" height="300" alt="Resort pool">
+                <img src="images/slider3.jpg"  width="300" height="300" alt="Resort pool">
+                <img src="images/slider4.jpg"  width="300" height="300" alt="Resort pool">
                
-                <img src="images/rs1.jpeg" width="300" height="300" alt="Resrot 1">
-                <img src="images/rs2.jpeg" width="300" height="300" alt="Resort 2">
-                <img src="images/rs3.jpeg" width="300" height="300" alt="Resort 3">
-                <img src="images/rs4.jpeg" width="300" height="300" alt="Resort 4">
-                <img src="images/rs5.jpeg" width="300" height="300" alt="Resort 5">
-                <img src="images/rs6.jpeg" width="300" height="300" alt="Resort 6">
-                <img src="images/rs7.jpeg" width="300" height="300" alt="Resort 7">
-                <img src="images/rs8.jpg" width="300" height="300" alt="Resort 8">
-                <img src="images/rs9.jpeg" width="300" height="300" alt="Resort 9">
+                <img src="images/rs1.jpeg"  width="300" height="300" alt="Resrot 1">
+                <img src="images/rs2.jpeg"  width="300" height="300" alt="Resort 2">
+                <img src="images/rs3.jpeg"  width="300" height="300" alt="Resort 3">
+                <img src="images/rs4.jpeg"  width="300" height="300" alt="Resort 4">
+                <img src="images/rs5.jpeg"  width="300" height="300" alt="Resort 5">
+                <img src="images/rs6.jpeg"  width="300" height="300" alt="Resort 6">
+                <img src="images/rs7.jpeg"  width="300" height="300" alt="Resort 7">
+                <img src="images/rs8.jpg"   width="300" height="300" alt="Resort 8">
+                <img src="images/rs9.jpeg"  width="300" height="300" alt="Resort 9">
             
-                <img src="images/rs11.jpeg" width="300" height="300" alt="Resort 11">
-                <img src="images/rs12.jpg" width="300" height="300" alt="Resort 12">
-                <img src="images/rs13.jpg" width="300" height="300" alt="Resort 13">
-                <img src="images/rs14.jpg" width="300" height="300" alt="Resort 14">
-                <img src="images/rs15.jpg" width="300" height="300" alt="Resort 15">
-                <img src="images/rs16.jpg" width="300" height="300" alt="Resort 16">
-                <img src="images/rs17.jpg" width="300" height="300" alt="Resort 17">
-                <img src="images/rs18.jpg" width="300" height="300" alt="Resort 18">
-                <img src="images/rs19.jpg" width="300" height="300" alt="Resort 19">
-                <img src="images/rs22.jpg" width="300" height="300" alt="resort 20">
-                <img src="images/rs20.jpg" width="300" height="300" alt="Resort 21">
-                <img src="images/rs21.jpg" width="300" height="300" alt="Resort 22">
-                <img src="images/bedroom1.jpg" width="300" height="300" alt="Resort 23">
-                <img src="images/bedroom2.jpg" width="300" height="300" alt="Resort 24">
-                <img src="images/bedroom3.jpg" width="300" height="300" alt="res">
+                <img src="images/rs11.jpeg"  width="300" height="300" alt="Resort 11">
+                <img src="images/rs12.jpg"  width="300" height="300" alt="Resort 12">
+                <img src="images/rs13.jpg"  width="300" height="300" alt="Resort 13">
+                <img src="images/rs14.jpg"  width="300" height="300" alt="Resort 14">
+                <img src="images/rs15.jpg"  width="300" height="300" alt="Resort 15">
+                <img src="images/rs16.jpg"  width="300" height="300" alt="Resort 16">
+                <img src="images/rs17.jpg"  width="300" height="300" alt="Resort 17">
+                <img src="images/rs18.jpg"  width="300" height="300" alt="Resort 18">
+                <img src="images/rs19.jpg"  width="300" height="300" alt="Resort 19">
+                <img src="images/rs22.jpg"  width="300" height="300" alt="resort 20">
+                <img src="images/rs20.jpg"  width="300" height="300" alt="Resort 21">
+                <img src="images/rs21.jpg"  width="300" height="300" alt="Resort 22">
+                <img src="images/bedroom1.jpg"  width="300" height="300" alt="Resort 23">
+                <img src="images/bedroom2.jpg"  width="300" height="300" alt="Resort 24">
+                <img src="images/bedroom3.jpg"  width="300" height="300" alt="res">
 
                 
 
@@ -233,15 +322,15 @@ Enveloped by the harmonious chorus of birdsong, the air at GREEN LEAF is laced w
             <h2>Contact Us</h2>
             <div class="contact-info">
                 <div class="contact-item">
-                    <img src="images/phone.png" alt="phone-logo">
+                    <img src="images/phone.png" alt="phone-logo" >
                     <p>  Phone: +91 90197 28811</p>
                 </div>
                 <div class="contact-item">
-                    <img src="images/email.png" alt="email-logo">
+                    <img src="images/email.png" alt="email-logo" >
                     <p>Email: info@greenleaffarmhouse.com</p>
                 </div>
                 <div class="contact-item">
-                    <img src="images/location.png" alt="location-logo">
+                    <img src="images/location.png" alt="location-logo" >
                     <p>Location: Kunigal, Karnataka</p>
                 </div>
             </div>
@@ -249,12 +338,12 @@ Enveloped by the harmonious chorus of birdsong, the air at GREEN LEAF is laced w
             
             <div class="social-links">
                 <div class="contact-item">
-                    <img src="images/instagram-brands-solid.svg" alt="Instagram logo">
+                    <img src="images/instagram-brands-solid.svg" alt="Instagram logo" >
                     <a href="https://www.instagram.com/greenleafkunigal?igsh=MW9oZGRvdDkyaWNOQ==" target="_blank">Click here to Visit our Instagram</a>
                 </div>
         
                 <div class="contact-item">
-                    <img src="images/youtube-brands-solid.svg" alt="YouTube logo">
+                    <img src="images/youtube-brands-solid.svg" alt="YouTube logo" >
                     <a href="https://www.youtube.com/@GreenLeaffh" target="_blank"> Click here to Visit our YouTube</a>
                 </div>
 
@@ -273,23 +362,24 @@ Enveloped by the harmonious chorus of birdsong, the air at GREEN LEAF is laced w
            
         
     </div>
+   
     <section id="review" class="section">
         <div class="circle-image">
         <h2>Review</h2>
         <div class="testimonials-row">
         <div class="testimonial">
         <h3>"BEST PLACE TO RELAX WEEKENDS WITH FAMILY..."</h3>
-        <img class="circle" src="images/ai1 (1).jpg" alt="1">
+        <img class="circle" src="images/ai1 (1).jpg" alt="1" >
         <h3>MUHIB SHARIF</h3>
         </div>
         <div class="testimonial">
         <h3>"ONE OF THE BEST PLACES TO STAY AND VERY WELL MAINTAINED..."</h3>
-        <img class="circle" src="images/ai1 (2).jpg" alt="2">
+        <img class="circle" src="images/ai1 (2).jpg" alt="2" >
         <h3>SARA</h3>
         </div>
         <div class="testimonial">
         <h3>"IT WAS A WONDERFUL ENVIRONMENT..."</h3>
-        <img class="circle" src="images/ai1 (3).jpg" alt="3">
+        <img class="circle" src="images/ai1 (3).jpg" alt="3" >
         <h3>NAVYA KRISHNA</h3>
         </div>
         </div>
@@ -298,17 +388,17 @@ Enveloped by the harmonious chorus of birdsong, the air at GREEN LEAF is laced w
        
         <div class="testimonial">
             <h3>"IT WAS AN AMAZING AND BEAUTIFUL PLACE TO ENJOY..."</h3>
-            <img class="circle" src="images/ai1 (4).jpg" alt="3">
+            <img class="circle" src="images/ai1 (4).jpg" alt="3" >
             <h3>MD ABRAR</h3>
             </div>
             <div class="testimonial">
                 <h3>"AWESOME  AND WONDERFUL ENVIRONMENT..."</h3>
-                <img class="circle" src="images/ai1 (5).jpg" alt="3">
+                <img class="circle" src="images/ai1 (5).jpg" alt="3" >
                 <h3>AMEEN KHAN</h3>
                 </div>
                 <div class="testimonial">
                     <h3>"REALLY GOOD PLACE TO BE WITH FAMILY..."</h3>
-                    <img class="circle" src="images/ai1 (6).jpg" alt="3">
+                    <img class="circle" src="images/ai1 (6).jpg" alt="3" >
                     <h3>SHAIKH HANEEF</h3>
                     </div>
                                
