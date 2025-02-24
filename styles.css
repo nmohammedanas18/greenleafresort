@@ -1,4 +1,319 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f7f7f7;
+    text-align: center;
+  }
 
+  .thumbnail {
+    max-width: 200px;
+    margin: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .thumbnail:hover {
+    transform: scale(1.05);
+  }
+
+  .modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    animation: zoom 0.6s;
+  }
+  @keyframes zoom {
+    from {transform: scale(0.7);}
+    to {transform: scale(1);}
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .close:hover {
+    color: #bbb;
+  }
+
+@media (max-width: 768px) {
+    .testimonials-row {
+      flex-direction: column;
+      align-items: center;
+    }
+    .testimonial {
+      width: 80%; 
+      margin: 10px 0;
+    }
+  }
+   
+   
+   
+   @media (max-width: 768px) {
+        .ff {
+            flex-direction: column;
+            width: 100%;
+        }
+        
+      
+        .facility {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+      
+        .facility-item {
+            width: 80%;
+            padding-top: 5%;
+            margin-bottom: 20px;
+        }
+    }
+     
+     
+     body {
+      text-align: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      font-family: "Norican", serif;
+      font-weight: 400;
+      font-style: normal;
+      font-optical-sizing: auto;
+    }
+
+    .content-wrapper {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #000;
+      font-size: 18px;
+      font-weight: 600;
+      font-family: 'Arial', sans-serif;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .content-wrapper iframe {
+    
+        width: 100%;
+        max-width: 560px;
+        height: auto;
+      }
+
+      .content-wrapper p {
+        width: 90%;
+        max-width: 600px;
+        text-align: left;
+      }
+    }
+     
+     .swiper {
+        width: 100%;
+        height: 400px;
+        margin-top: 20px;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+   
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .logo, .state-logo {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 35px;
+            letter-spacing: 3px;
+        }
+
+        .swiper {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo, .state-logo {
+            width: 120px;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        .swiper {
+            height: 250px;
+        }
+    }
+          
+          
+          body {
+               
+              
+                text-align: center;
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+    
+          
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                flex-wrap: wrap;
+            }
+    
+            .logo, .state-logo {
+                width: 200px;
+                height: auto;
+            }
+    
+            header h1 {
+                font-size: 50px;
+             
+                
+                letter-spacing: 5px;
+                margin: 0;
+                flex: 1;
+                text-align: center;
+            }
+    
+            @media (max-width: 768px) {
+                header {
+                    flex-direction: column;
+                    text-align: center;
+                }
+    
+                .logo, .state-logo {
+                    width: 150px;
+                    margin-bottom: 10px;
+                }
+    
+                header h1 {
+                    font-size: 35px;
+                    letter-spacing: 3px;
+                }
+            }
+    
+            @media (max-width: 480px) {
+                .logo, .state-logo {
+                    width: 120px;
+                }
+    
+                header h1 {
+                    font-size: 28px;
+                }
+            }
+            
+            
+
+      
+      
+      body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+        }
+    
+        nav {
+          background: black;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 10px;
+          position: relative;
+        }
+    
+        nav a {
+          color: white;
+          text-decoration: none;
+          font-size: 20px;
+          padding: 10px;
+          transition: background 0.3s;
+        }
+    
+        nav a:hover {
+          background: darkgray;
+        }
+    
+     
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+        }
+    
+        .hamburger div {
+          width: 25px;
+          height: 3px;
+          background: white;
+          margin: 4px 0;
+          transition: 0.4s;
+        }
+    
+        @media (max-width: 768px) {
+       
+          nav a { 
+            display: none;
+          }
+    
+          .hamburger {
+            display: flex;
+          }
+    
+      
+          nav.active a {
+            display: block;
+            text-align: center;
+            width: 100%;
+            border-top: 1px solid #444;
+          }
+    
+          nav {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+        }
+     
+        
         body {
                 
         margin: 0;
@@ -140,6 +455,7 @@
             
 
     .ff-head p{
+        
         font-size: 1.5rem;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
